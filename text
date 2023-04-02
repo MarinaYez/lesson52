@@ -1,0 +1,57 @@
+2
+CREATE TABLE shop (PRODUCT VARCHAR(128), Price DECIMAL(5,2) , rating DECIMAL(5,2) , category VARCHAR(128), brand VARCHAR(100));
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('iPhone 9','549','4.69','smartphones', 'Apple');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('iPhone X','899','4.44','smartphones', 'Apple');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('Samsung Universe 9','1249','4.09','smartphones', 'Samsung');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('OPPO F19','280','4.3','smartphones', 'OPPO');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('Huawei P30','499','4.09','smartphones', 'Huawei');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('MacBook Pro','1149','4.57','laptops', 'Apple');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('Samsung Galaxy Book','1499','4.25','laptops', 'Samsung');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('Microsoft Surface Laptop 4','1149','4.43','laptops','Microsoft Surface');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('Infinix INBOOK','1099','4.54','laptops','Infinix');
+
+INSERT INTO shop (PRODUCT, Price, rating, category, brand) 
+VALUES('HP Pavilion 15-DK1056WM','1099','4.43','laptops','HP Pavilion');
+
+2.1
+
+ALTER TABLE shop ADD INDEX(PRODUCT(45));
+ALTER TABLE shop ADD INDEX(Price (45));
+ALTER TABLE shop ADD INDEX(rating(45));
+ALTER TABLE shop ADD INDEX(category(45));
+ALTER TABLE shop ADD INDEX(brand(45));
+
+PRIMARY KEY (`id`);
+
+3.1
+ SELECT PRODUCT, Price FROM shop WHERE brand = 'Apple';
+
+ 3.2
+ SELECT PRODUCT FROM shop WHERE Price < 1000;
+
+ 3.3
+ SELECT PRODUCT FROM shop WHERE Price BETWEEN 500 AND 1500;
+
+ 3.4
+ SELECT PRODUCT, category FROM shop WHERE brand IN ('Apple', 'Samsung', 'Huawei');
+
+ 3.5
+ SELECT PRODUCT, category FROM shop WHERE PRODUCT LIKE "%Samsung'%";
